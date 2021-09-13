@@ -52,6 +52,16 @@ library Base64 {
             }
         }
 
+        // Add base64 padding.
+        uint256 resRemainder = res.length;
+        if (resRemainder % 4 != 0) {
+            if (4 - (resRemainder % 4) == 1) {
+                res = abi.encodePacked(res, '=1');
+            } else if (4 - (resRemainder % 4) == 2) {
+                res = abi.encodePacked(res, '==');
+            }  
+        }
+
         return string(res);
     }
 
