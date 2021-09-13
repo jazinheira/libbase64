@@ -56,7 +56,7 @@ library Base64 {
         uint256 resRemainder = res.length;
         if (resRemainder % 4 != 0) {
             if (4 - (resRemainder % 4) == 1) {
-                res = abi.encodePacked(res, '=1');
+                res = abi.encodePacked(res, '=');
             } else if (4 - (resRemainder % 4) == 2) {
                 res = abi.encodePacked(res, '==');
             }  
