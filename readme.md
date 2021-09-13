@@ -1,0 +1,1 @@
+A library to help with base64 encoding data in Solidity.
